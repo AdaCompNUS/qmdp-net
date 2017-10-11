@@ -47,6 +47,19 @@ Load the previously saved model and train further using the full trajectories:
 python train.py ./data/grid10/ --logpath ./data/grid10/output-lim100/ --loadmodel ./data/grid10/output-lim4/final.chk --lim_traj_len 100
 ```
 
+A model trained by the commands above is readily available in the folder: data/grid10/trained-model. You may load and evaluate this model using the following command: 
+```
+python train.py ./data/grid10/ --loadmodel ./data/grid10/trained-model/final.chk --epochs 0
+```
+
+The expected output:
+```
+Evaluating 100 samples, repeating simulation 1 time(s)
+Expert
+Success rate: 1.000  Trajectory length: 7.3  Collision rate: 0.000
+QMDP-Net
+Success rate: 0.990  Trajectory length: 7.1  Collision rate: 0.000
+```
 
 For help on arguments execute:
 ```
