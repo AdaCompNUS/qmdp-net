@@ -47,6 +47,12 @@ Load the previously saved model and train further using the full trajectories:
 python train.py ./data/grid10/ --logpath ./data/grid10/output-lim100/ --loadmodel ./data/grid10/output-lim4/final.chk --lim_traj_len 100
 ```
 
+For help on arguments execute:
+```
+python train.py --help
+```
+
+### Evaluate a previously trained model
 A model trained by the commands above is readily available in the folder: data/grid10/trained-model. You may load and evaluate this model using the following command: 
 ```
 python train.py ./data/grid10/ --loadmodel ./data/grid10/trained-model/final.chk --epochs 0
@@ -61,21 +67,19 @@ QMDP-Net
 Success rate: 0.990  Trajectory length: 7.1  Collision rate: 0.000
 ```
 
-For help on arguments execute:
-```
-python train.py --help
-```
+### Generate training and test data
 
-
-### Generate data
-
-Generate data for the 18x18 deterministic grid navigation domain.  
-10,000 environments for training, 500 for testing, 5 and 1 trajectories per environment
-
+You may generate data using the script grid.py.  
+As an example, the command for the 18x18 deterministic grid navigation domain is: 
 ```
 python grid.py ./data/grid18/ 10000 500 --N 18 --train_trajs 5 --test_trajs 1
 ```
+This will generate 10,000 random environments for training, 500 for testing, 5 and 1 trajectories per environment.
 
+For the stochastic variant use:
+```
+python grid.py ./data/grid18/ 10000 500 --N 18 --train_trajs 5 --test_trajs 1 --Pmove_succ 0.8 --Pobs_succ 0.9
+```
 
 For help on arguments execute:
 ```
