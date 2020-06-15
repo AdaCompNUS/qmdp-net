@@ -18,7 +18,7 @@ Python packages: numpy, scipy, tables, pymdptoolbox, tensorpack
 To install these packages using pip:
 ```
 pip install tensorflow
-pip install numpy scipy tables pymdptoolbox tensorpack
+pip install numpy scipy tables pymdptoolbox tensorpack==0.9.1
 ```
 
 Optional: to speed up data generation download and install the latest version of pymdptoolbox
